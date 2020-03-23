@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500&display=swap');
+
+:root{
+    --accentColor:  hsl(0, 36%, 70%);
+    --fontColor: hsl(0, 6%, 24%);
+    
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+
+}
+
+/* Left part of the screen */
+.left{
+    color: var(--accentColor);
+    width: 60%;
+    padding: 0 150px;
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)),
+                        url('./images/bg-pattern-desktop.svg');
+    background-size: cover;
+    
+}
+
+.left-container{
+    max-width: 450px;
+}
+
+.logo{
+    margin: 60px 0 100px 0;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    color: var(--fontColor);
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.highlight{
+    font-weight: 300;
+    color: var(--accentColor);
+}
+
+.description{
+    font-size: 16px;
+    margin: 30px 0;
+
+}
+
+/* Right part of the screen */
+
+.right{
+    width:40%;
+    background-image: url('./images/hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+form {
+    position: relative;
+}
+
+form.error input{
+    border: 2px solid hsl(0, 36%, 70%);
+
+}
+
+
+input{
+    background-color: transparent;
+    border: 1px solid var(--accentColor);
+    padding: 10px 30px;
+    border-radius: 50px;
+    width: 100%;
+    font-size: 16px;
+    height: 40px;
+}
+
+input:active,
+input:focus{
+    outline: none;
+    border-width: 2px;
+    box-shadow:  0px 0px 5px  var(--accentColor);
+}
+
+::placeholder{
+    color: var(--accentColor);
+}
+
+/* Error in form validation */
+form.error .error-icon{
+    display: block;
+}
+
+form.error .error-message{
+    display: block;
+}
+
+.error-icon{
+    display: none;
+    position: absolute;
+    top: 9px;
+    right: 118px;
+    
+}
+
+.error-message{
+    display: none;
+    margin-top: 15px;
+    margin-left: 30px;
+    color: hsl(0, 93%, 68%);
+}
+
+button{
+    background-image: linear-gradient(135deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    padding:10px;
+    border-radius: 50px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    box-shadow:  2px 5px 10px  var(--accentColor);
+    cursor: pointer;
+}
+
+button:hover{
+    background-image: linear-gradient(
+        135deg,
+        hsl(0, 74%, 74%),
+        hsl(0, 80%, 86%)
+    );
+}
+
+button:focus,
+button:active{
+    outline: none;
+}
+
+footer{
+    text-align: center;
+    color: var(--fontColor);
+    font-size: 16px;
+}
+
+footer a {
+    color: var(--accentColor);
+}
+
+.bg-mobile{
+    display: none;
+}
+
+
+@media (max-width:375px){
+    
+    .logo{
+        margin: 10px 0px 15px 10px;
+        width: 100px;
+    }
+    .right{
+        display: none;
+    }
+
+    .left-container{
+        width: inherit;
+    }
+
+    .left{
+        width: 100%;
+        padding: 20px 30px;
+        
+    }
+
+    h1{
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 10px;
+    }
+
+    .description{
+        text-align: center;
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    button{
+        width: 70px;
+    }
+    
+    .bg-mobile{
+        display: block;
+        width: calc(100%+ 60px);
+        margin: 10px -30px 50px -30px;   
+    }
+
+    footer{
+        font-size: 10px;
+    }
+}  
